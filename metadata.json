@@ -1,0 +1,6 @@
+{
+  "name": "KilatQuiz - Live Multiplayer Quiz Arena",
+  "description": "Platform lomba cepat menjawab soal real-time dengan tampilan layar besar, kendali ponsel pintar, kustomisasi avatar, soal multimedia video/gambar, statistik analitik komprehensif, dan leaderboard global.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
