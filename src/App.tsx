@@ -21,6 +21,7 @@ import { GlobalLeaderboard } from './components/GlobalLeaderboard';
 import { FriendChallenges } from './components/FriendChallenges';
 import { AccountSyncModal } from './components/AccountSyncModal';
 import { QuizCreatorModal } from './components/QuizCreatorModal';
+import { PhpExportModal } from './components/PhpExportModal';
 import { AvatarCustomizer, AVATAR_ICONS, COLOR_THEMES } from './components/AvatarCustomizer';
 import { 
   Play, 
@@ -59,6 +60,7 @@ export default function App() {
   const [showSyncModal, setShowSyncModal] = useState(false);
   const [showChallengesModal, setShowChallengesModal] = useState(false);
   const [showCreatorModal, setShowCreatorModal] = useState(false);
+  const [showPhpModal, setShowPhpModal] = useState(false);
 
   // Incoming Challenge Toast
   const [incomingChallenge, setIncomingChallenge] = useState<FriendChallenge | null>(null);
@@ -552,6 +554,12 @@ export default function App() {
             >
               Sinkronisasi Akun
             </button>
+            <button
+              onClick={() => setShowPhpModal(true)}
+              className="text-amber-400 hover:text-amber-300 font-bold transition-colors whitespace-nowrap shrink-0 flex items-center gap-1"
+            >
+              <span>🐘 Versi PHP & aaPanel</span>
+            </button>
           </nav>
 
           {/* Zone 3: 1 primary action (+ Theme toggle) */}
@@ -899,6 +907,13 @@ export default function App() {
           onSaveQuiz={handleSaveNewQuiz}
           onClose={() => setShowCreatorModal(false)}
         />
+      )}
+
+      {/* ============================================================ */}
+      {/* MODAL: SOURCE CODE PHP & AAPANEL CONFIG */}
+      {/* ============================================================ */}
+      {showPhpModal && (
+        <PhpExportModal onClose={() => setShowPhpModal(false)} />
       )}
     </div>
   );
